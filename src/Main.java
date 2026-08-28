@@ -18,5 +18,7 @@ public class Main {
             System.out.printf("%s\n", ValidaCPF.imprimeCPF(CPF));
         else
             System.out.printf("Erro, CPF invalido !!!\n");
+    
+        ler.close();
     }
 }
