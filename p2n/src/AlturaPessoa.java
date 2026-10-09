@@ -1,8 +1,3 @@
-package meuPacote.entrada;
-
-import meuPacote.modelo.Pessoa;
-import meuPacote.modelo.PessoaIMC;
-
 import java.util.Scanner;
 
 public class AlturaPessoa extends CampoSimplesPessoa {

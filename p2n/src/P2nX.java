@@ -1,18 +1,6 @@
-import meuPacote.colecao.MinhaListaOrdenavel;
-import meuPacote.modelo.Homem;
-import meuPacote.modelo.Mulher;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/*
- * Programa principal do P2n. Como permitido no enunciado, as etapas ficam
- * no main: cria a lista, insere 10 pessoas "na mao" e exibe o menu.
- *
- * Menu principal: 1 lista, 2 ou ENTER encerra; outra entrada e invalida.
- * Menu de ordenacao: numero do criterio lista as pessoas; ENTER volta ao
- * menu principal; outra entrada e invalida e a pergunta e repetida.
- */
 public class P2nX {
     public static void main(String[] args) {
 
@@ -71,7 +59,6 @@ public class P2nX {
         scanner.close();
     }
 
-    // Devolve o criterio escolhido (constante de MinhaListaOrdenavel) ou 0 se o usuario teclar ENTER.
     private static int lerCriterio(Scanner scanner) {
         while (true) {
             System.out.println();
@@ -96,7 +83,6 @@ public class P2nX {
                     return criterio;
                 }
             } catch (NumberFormatException e) {
-                // Tratado abaixo como opcao invalida.
             }
 
             System.out.println("Opcao invalida!!");

@@ -1,7 +1,3 @@
-package meuPacote.modelo;
-
-import meuPacote.entrada.DadosPessoa;
-
 public class Mulher extends PessoaIMC {
 
     public Mulher(String nome, String sobreNome, String dia, String mes, String ano, float peso, float altura) {

@@ -1,8 +1,3 @@
-package meuPacote.entrada;
-
-import meuPacote.validacao.Mes;
-import meuPacote.validacao.ValidaData;
-
 import java.util.Scanner;
 
 public class NascimentoPessoa implements AtributoPessoa {
@@ -29,7 +24,6 @@ public class NascimentoPessoa implements AtributoPessoa {
     public String ler() {
         while (true) {
 
-            // DIA
             System.out.print("Dia de nascimento: ");
             String dia = scanner.nextLine();
 
@@ -44,7 +38,6 @@ public class NascimentoPessoa implements AtributoPessoa {
                 continue;
             }
 
-            // MÊS
             System.out.print("Mês de nascimento: ");
             String mes = scanner.nextLine();
 
@@ -62,7 +55,6 @@ public class NascimentoPessoa implements AtributoPessoa {
                 continue;
             }
 
-            // ANO
             System.out.print("Ano de nascimento: ");
             String ano = scanner.nextLine();
 

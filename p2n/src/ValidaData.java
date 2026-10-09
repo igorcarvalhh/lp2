@@ -1,5 +1,3 @@
-package meuPacote.validacao;
-
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -41,7 +39,6 @@ public class ValidaData {
                 }
 
             } catch (NumberFormatException e) {
-                // Não é um número, então continua procurando pelo nome.
             }
         }
 

@@ -1,7 +1,3 @@
-package meuPacote.entrada;
-
-import meuPacote.validacao.ValidaCPF;
-
 import java.util.Scanner;
 
 public class NumCPFPessoa extends CampoSimplesPessoa {

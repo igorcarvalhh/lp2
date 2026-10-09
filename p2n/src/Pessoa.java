@@ -1,18 +1,8 @@
-package meuPacote.modelo;
-
-import meuPacote.entrada.DadosPessoa;
-import meuPacote.validacao.ValidaCPF;
-
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-/*
- * P2n: os campos peso e altura, seus get/set e sua exibicao no toString
- * foram movidos para PessoaIMC. Os validadores de peso e altura tambem
- * foram para PessoaIMC, pois so fazem sentido junto desses campos.
- */
 public class Pessoa {
     private String nome;
     private String sobreNome;
@@ -27,7 +17,6 @@ public class Pessoa {
 
         this.nome = nome;
         this.sobreNome = sobreNome;
-        // O CPF e armazenado apenas com os 11 digitos (requisito do P1n).
         this.numCPF = numCPF == null ? null : numCPF.replaceAll("[^\\d]", "");
         this.dataNasc = new GregorianCalendar(Integer.parseInt(ano), Integer.parseInt(mes) - 1, Integer.parseInt(dia));
 
@@ -70,8 +59,6 @@ public class Pessoa {
         return formato.format(this.dataNasc.getTime());
     }
 
-    // Devolve uma copia da data para que a ordenacao possa compara-la
-    // sem expor o objeto interno (encapsulamento).
     public GregorianCalendar getDataNascCalendar() {
         return (GregorianCalendar) this.dataNasc.clone();
     }
@@ -152,10 +139,6 @@ public class Pessoa {
         this.dataNasc.set(GregorianCalendar.YEAR, Integer.parseInt(ano));
     }
 
-    /*
-     * O genero e obtido pela propria classe do objeto (getClass), e nao por
-     * um campo rotulo: um objeto Homem mostra "(Homem)" e um Mulher "(Mulher)".
-     */
     @Override
     public String toString() {
         String cpf = this.numCPF == null ? "não informado" : ValidaCPF.imprimeCPF(this.numCPF);

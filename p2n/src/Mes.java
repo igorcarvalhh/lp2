@@ -1,5 +1,3 @@
-package meuPacote.validacao;
-
 public enum Mes {
 
     JANEIRO(1, "janeiro"),

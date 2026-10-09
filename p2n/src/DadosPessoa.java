@@ -1,5 +1,3 @@
-package meuPacote.entrada;
-
 import java.util.Scanner;
 
 public class DadosPessoa {

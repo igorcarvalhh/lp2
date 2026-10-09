@@ -5,29 +5,31 @@ Implementação do enunciado `P2n-PessoaIMC-Ordenacao-2025-2.md` (esse arquivo n
 ## Como compilar e executar
 
 ```
-javac -d out $(find src -name "*.java")
+javac -d out src/*.java
 java -cp out P2nX
 ```
 
 ## Estrutura
 
+Todas as classes estão no **pacote default** (sem declaração `package`), pois o exercício não pede pacotes.
+
 ```
 src/
-├── P2nX.java                          classe principal (menu)
-└── meuPacote/
-    ├── modelo/
-    │   ├── Pessoa.java                (P1n, sem peso/altura)
-    │   ├── PessoaIMC.java             (nova, abstrata)
-    │   ├── Homem.java                 (agora herda de PessoaIMC)
-    │   └── Mulher.java                (agora herda de PessoaIMC)
-    ├── colecao/
-    │   └── MinhaListaOrdenavel.java   (nova)
-    ├── validacao/                     (P1n, sem alteração)
-    └── entrada/                       (P1n, só Peso/AlturaPessoa ajustadas)
+├── P2nX.java                  classe principal (menu)
+├── MinhaListaOrdenavel.java   (nova)
+├── Pessoa.java                (P1n, sem peso/altura)
+├── PessoaIMC.java             (nova, abstrata)
+├── Homem.java, Mulher.java    (agora herdam de PessoaIMC)
+├── ValidaCPF.java, ValidaData.java, Mes.java          (P1n, sem alteração)
+└── DadosPessoa.java, AtributoPessoa.java, CampoSimplesPessoa.java,
+    NomePessoa.java, SobreNomePessoa.java, NascimentoPessoa.java,
+    NumCPFPessoa.java, PesoPessoa.java, AlturaPessoa.java  (entrada de dados do P1n)
 ```
 
-Todas as classes do P1n foram copiadas de `../lp2/src`, como pede o enunciado.
-O P2n não lê dados do teclado; o pacote `entrada` foi mantido para reuso no próximo programa.
+As classes do P1n foram copiadas como pede o enunciado. No P1n elas estavam no pacote `meuPacote`;
+aqui foram trazidas para o pacote default, retirando as linhas `package` e `import meuPacote...`.
+O P2n não lê dados do teclado; as classes de entrada foram mantidas para reuso no próximo programa.
+Só `PesoPessoa` e `AlturaPessoa` foram ajustadas.
 
 ## Parte 1 – Decisões de projeto
 

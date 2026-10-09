@@ -1,32 +1,28 @@
-package meuPacote.entrada;
-
-import meuPacote.modelo.Pessoa;
-
 import java.util.Scanner;
 
-public class SobreNomePessoa extends CampoSimplesPessoa {
+public class PesoPessoa extends CampoSimplesPessoa {
 
-    public SobreNomePessoa(Scanner scanner) {
+    public PesoPessoa(Scanner scanner) {
         super(scanner);
     }
 
     @Override
     public void armazenar(DadosPessoa dados, String valor) {
-        dados.setSobreNome(valor);
+        dados.setPeso(Pessoa.parseDecimal(valor));
     }
 
     @Override
     protected String getPergunta() {
-        return "Insira o sobrenome: ";
+        return "Insira o peso: ";
     }
 
     @Override
     protected String getRotuloErro() {
-        return "Sobrenome inválido.";
+        return "Peso inválido.";
     }
 
     @Override
     protected String validar(String valor) {
-        return Pessoa.validaNome(valor);
+        return PessoaIMC.validaPeso(valor);
     }
 }

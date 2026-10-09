@@ -1,24 +1,9 @@
-package meuPacote.colecao;
-
-import meuPacote.modelo.Homem;
-import meuPacote.modelo.PessoaIMC;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-/*
- * Encapsula um ArrayList de PessoaIMC (objetos Homem ou Mulher) e oferece
- * a ordenacao por varios criterios atraves de Comparators definidos como
- * classes anonimas e de Collections.sort().
- *
- * O ArrayList e usado sem generics (tipo "cru"), como pedido no enunciado;
- * por isso get() faz o casting para PessoaIMC. Os Comparators seguem o
- * exemplo do enunciado (Comparator<PessoaIMC>).
- */
 public class MinhaListaOrdenavel {
 
-    // "Tabela" de constantes com os criterios de ordenacao.
     public static final int NOME_AZ = 1;
     public static final int NOME_ZA = 2;
     public static final int PESO = 3;
@@ -36,7 +21,6 @@ public class MinhaListaOrdenavel {
     public static final int CPF = 15;
     public static final int CPF_REVERSO = 16;
 
-    // Descricao de cada criterio, na posicao (constante - 1), usada no menu.
     private static final String[] DESCRICOES = {
             "Alfabetica (A-Z)",
             "Alfabetica (Z-A)",
@@ -58,7 +42,6 @@ public class MinhaListaOrdenavel {
 
     private ArrayList lista = new ArrayList();
 
-    // Nome: compara o nome e, em caso de empate, o sobrenome (sem diferenciar maiusculas).
     public Comparator<PessoaIMC> nomeC = new Comparator<PessoaIMC>() {
         @Override
         public int compare(PessoaIMC p1, PessoaIMC p2) {
@@ -94,7 +77,6 @@ public class MinhaListaOrdenavel {
         }
     };
 
-    // Genero: identificado por instanceof (nao ha campo de genero). Ordem crescente = Homem antes de Mulher.
     public Comparator<PessoaIMC> generoC = new Comparator<PessoaIMC>() {
         @Override
         public int compare(PessoaIMC p1, PessoaIMC p2) {
@@ -111,7 +93,6 @@ public class MinhaListaOrdenavel {
         }
     };
 
-    // Data de nascimento: compara as datas completas (GregorianCalendar), nao so o ano.
     public Comparator<PessoaIMC> dataNascC = new Comparator<PessoaIMC>() {
         @Override
         public int compare(PessoaIMC p1, PessoaIMC p2) {
@@ -119,7 +100,6 @@ public class MinhaListaOrdenavel {
         }
     };
 
-    // CPF: armazenado com 11 digitos, entao a ordem lexicografica coincide com a numerica.
     public Comparator<PessoaIMC> cpfC = new Comparator<PessoaIMC>() {
         @Override
         public int compare(PessoaIMC p1, PessoaIMC p2) {
@@ -150,10 +130,6 @@ public class MinhaListaOrdenavel {
         return DESCRICOES[criterio - 1];
     }
 
-    /*
-     * Ordena o ArrayList encapsulado segundo o criterio (uma das constantes
-     * acima) e o devolve. Criterio desconhecido: a lista volta sem alteracao.
-     */
     @SuppressWarnings("unchecked")
     public ArrayList ordena(int criterio) {
         switch (criterio) {
